@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookmark Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .category-content { display: none; }
+    .category.open .category-content { display: block; }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">📚 My Bookmark Dashboard</h1>
+
+  <div id="categories" class="space-y-4 max-w-3xl mx-auto">
+    <!-- Example Category -->
+    <div class="category bg-white rounded shadow p-4">
+      <div class="flex justify-between items-center cursor-pointer" onclick="toggleCategory(this)">
+        <h2 class="text-xl font-semibold text-gray-800">Work Tools</h2>
+        <span class="text-blue-600">▶</span>
+      </div>
+      <div class="category-content mt-4">
+        <ul class="space-y-2">
+          <li class="flex items-center space-x-2">
+            <img src="icons/github.png" alt="GitHub" class="w-6 h-6">
+            <a href="https://github.com" class="text-blue-600 hover:underline" target="_blank">GitHub</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <img src="icons/vercel.png" alt="Vercel" class="w-6 h-6">
+            <a href="https://vercel.com" class="text-blue-600 hover:underline" target="_blank">Vercel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-10 text-center">
+    <button onclick="addLinkPrompt()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">+ Add Link</button>
+  </div>
+
+  <script>
+    function toggleCategory(el) {
+      const category = el.parentElement;
+      category.classList.toggle('open');
+    }
+
+    function addLinkPrompt() {
+      alert('Link adding feature to be implemented (XML backed)');
+    }
+  </script>
+</body>
+</html>
