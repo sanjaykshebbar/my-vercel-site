@@ -1,101 +1,105 @@
----
-# Homepage configuration
-# See https://fontawesome.com/search for icons options
-
-title: "Demo dashboard"
-subtitle: "Homer"
+title: "Zeta IT Tools"
+subtitle: "Internal Access Panel"
 logo: "logo.png"
-# icon: "fas fa-skull-crossbones" # Optional icon
-
 header: true
-footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
-
-# Optional theme customization
+footer: false
 theme: default
+columns: true  # ✅ ENABLE MULTI-COLUMN DISPLAY
 
-# Optional theme customization (color overrrides)
-# overrrides can also be done using CSS vars 
-colors:
-  light:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
-    background: "#f5f5f5"
-    card-background: "#ffffff"
-    text: "#363636"
-    text-header: "#ffffff"
-    text-title: "#303030"
-    text-subtitle: "#424242"
-    card-shadow: rgba(0, 0, 0, 0.1)
-    link: "#3273dc"
-    link-hover: "#363636"
-  dark:
-    highlight-primary: "#3367d6"
-    highlight-secondary: "#4285f4"
-    highlight-hover: "#5a95f5"
-    background: "#131313"
-    card-background: "#2b2b2b"
-    text: "#eaeaea"
-    text-header: "#ffffff"
-    text-title: "#fafafa"
-    text-subtitle: "#f5f5f5"
-    card-shadow: rgba(0, 0, 0, 0.4)
-    link: "#3273dc"
-    link-hover: "#ffdd57"
+# ...
 
-# Optional message
-message:
-  #url: https://b4bz.io
-  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
-  title: "Demo !"
-  icon: "fa fa-grin"
-  content: "This is a dummy homepage demo. <br /> Find more information on <a href='https://github.com/bastienwirtz/homer'>github.com/bastienwirtz/homer</a>"
-
-# Optional navbar
-# links: [] # Allows for navbar (dark mode, layout, and search) without any links
-links:
-  - name: "Contribute"
-    icon: "fab fa-github"
-    url: "https://github.com/bastienwirtz/homer"
-    target: "_blank" # optional html a tag target attribute
-  - name: "Wiki"
-    icon: "fas fa-book"
-    url: "https://www.wikipedia.org/"
-  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
-  # see url field and assets/additional-page.yml.dist used in this example:
-  #- name: "another page!"
-  #  icon: "fas fa-file-alt"
-  #  url: "#additional-page" 
-
-# Services
-# First level array represent a group.
-# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
-  - name: "Applications"
-    icon: "fas fa-cloud"
+  - name: "Zeta IT Tools"
+    icon: "fas fa-network-wired"
+    layout: columns  # ✅ USE COLUMN LAYOUT
     items:
-      - name: "Get started"
-        icon: "fa-solid fa-download"
-        subtitle: "Start using Homer in a few minutes"
-        tag: "setup"
-        url: "https://github.com/bastienwirtz/homer?tab=readme-ov-file#get-started"
-      - name: "Configuration"
-        icon: "fa-solid fa-sliders"
-        subtitle: "Configuration options documentation"
-        tag: "setup"
-        url: "https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md"
-      - name: "Theming"
-        icon: "fa-solid fa-palette"
-        subtitle: "Customize Homer appearance"
-        tag: "theming"
-        url: "https://github.com/bastienwirtz/homer/blob/main/docs/theming.md"
-      - name: "Smart cards"
-        icon: "fa-solid fa-palette"
-        subtitle: "Displays dynamic information or actions."
-        tag: "setup"
-        url: "https://github.com/bastienwirtz/homer/blob/main/docs/customservices.md"
-      - name: "Dashboard icons"
-        icon: "fa-solid fa-icons"
-        subtitle: "Dashboard icons"
-        tag: "setup"
-        url: "https://github.com/walkxcode/dashboard-icons"
+      - name: "Email Portal"
+        url: "http://corpitmail.internal.directi.com/edp2user"
+        icon: "fas fa-envelope"
+      - name: "Gsuite Portal"
+        url: "http://172.16.140.222/zeta/modify/#"
+        icon: "fas fa-user-cog"
+      - name: "Zeta OCS"
+        url: "https://bcon.supporthub.tech/"
+        icon: "fas fa-cloud"
+      - name: "VMOBI OCS"
+        url: "https://fcon.supporthub.tech/"
+        icon: "fas fa-cloud"
+      - name: "Directi OCS"
+        url: "https://dcon.supporthub.tech/"
+        icon: "fas fa-cloud"
+      - name: "Redmine Ticket"
+        url: "https://ithelpdesk.directi.com/my/page"
+        icon: "fas fa-ticket-alt"
+      - name: "Zeta Snipe IT"
+        url: "https://h-zeta.internal.directi.com/"
+        icon: "fas fa-desktop"
+      - name: "Directi Snipe IT"
+        url: "https://h-directi.internal.directi.com/login"
+        icon: "fas fa-desktop"
+      - name: "VMOBI Snipe IT"
+        url: "https://h-vmobi.internal.directi.com/"
+        icon: "fas fa-desktop"
+      - name: "EPP Download"
+        url: "http://172.16.64.63/client.php/software"
+        icon: "fas fa-download"
+      - name: "Zeta SSP Portal"
+        url: "https://ssp.corp.zeta.tech/"
+        icon: "fas fa-user-shield"
+      - name: "Flock SSP Portal"
+        url: "https://fpassword.corp.flock.com/"
+        icon: "fas fa-key"
+      - name: "Jira Portal"
+        url: "https://zeta-tm.atlassian.net"
+        icon: "fab fa-jira"
+      - name: "External VPN"
+        url: "https://blr-vpn.ext.zeta.tech/"
+        icon: "fas fa-shield-alt"
+      - name: "IT Share Drive"
+        url: "http://172.16.64.81"
+        icon: "fas fa-folder"
+      - name: "Udemy Learning"
+        url: "https://corpteams.udemy.com"
+        icon: "fas fa-graduation-cap"
+      - name: "SSL VPN"
+        url: "https://sslvpn.zeta.in"
+        icon: "fas fa-lock"
+      - name: "SSL VPN 2"
+        url: "https://sslvpn2.zeta.in"
+        icon: "fas fa-lock"
+      - name: "Directi SSL VPN"
+        url: "https://ssl.vpn.directi.com"
+        icon: "fas fa-lock"
+      - name: "Ops SSL VPN"
+        url: "https://sslvpn.ops.directi.com"
+        icon: "fas fa-lock"
+      - name: "Zeta Reset Portal"
+        url: "https://172.16.65.149/"
+        icon: "fas fa-sync"
+      - name: "McAfee Portal"
+        url: "https://mcafee.com"
+        icon: "fas fa-virus"
+      - name: "Microsoft Login"
+        url: "https://login.microsoftonline.com/"
+        icon: "fab fa-microsoft"
+      - name: "Jetbrains Login"
+        url: "https://account.jetbrains.com/login"
+        icon: "fas fa-code"
+      - name: "EPP Admin"
+        url: "https://epp-blr.internal.zeta.in/"
+        icon: "fas fa-tools"
+      - name: "Directi SSP"
+        url: "https://password.internal.directi.com/"
+        icon: "fas fa-user-lock"
+      - name: "Kaspersky Directi"
+        url: "https://cloud.kaspersky.com/#/companies/all"
+        icon: "fas fa-shield-virus"
+      - name: "ManageEngine"
+        url: "https://endpointcentral.manageengine.in/webclient"
+        icon: "fas fa-cogs"
+      - name: "New EPP Portal"
+        url: "https://i6lob4q.hosted.endpointprotector.com"
+        icon: "fas fa-broadcast-tower"
+      - name: "Zeta KAV Portal"
+        url: "https://ksc.kaspersky.com/"
+        icon: "fas fa-shield-alt"
