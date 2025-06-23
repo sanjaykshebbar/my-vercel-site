@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Bookmark Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Homer Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.5.7/css/pico.min.css">
   <style>
-    .category-content { display: none; }
-    .category.open .category-content { display: block; }
+    body { padding: 2rem; background: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899); color: white; font-family: sans-serif; }
+    .link-box { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen p-6">
-  <h1 class="text-3xl font-bold text-center text-blue-700 mb-6">📚 My Bookmark Dashboard</h1>
-
-  <div id="categories" class="space-y-4 max-w-3xl mx-auto">
-    <!-- Example Category -->
-    <div class="category bg-white rounded shadow p-4">
-      <div class="flex justify-between items-center cursor-pointer" onclick="toggleCategory(this)">
-        <h2 class="text-xl font-semibold text-gray-800">Work Tools</h2>
-        <span class="text-blue-600">▶</span>
-      </div>
-      <div class="category-content mt-4">
-        <ul class="space-y-2">
-          <li class="flex items-center space-x-2">
-            <img src="icons/github.png" alt="GitHub" class="w-6 h-6">
-            <a href="https://github.com" class="text-blue-600 hover:underline" target="_blank">GitHub</a>
-          </li>
-          <li class="flex items-center space-x-2">
-            <img src="icons/vercel.png" alt="Vercel" class="w-6 h-6">
-            <a href="https://vercel.com" class="text-blue-600 hover:underline" target="_blank">Vercel</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="mt-10 text-center">
-    <button onclick="addLinkPrompt()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">+ Add Link</button>
-  </div>
+<body>
+  <h1>🔗 Homer Dashboard</h1>
+  <button onclick="window.open('editor.html', '_blank')" class="contrast">Edit Dashboard</button>
+  <div id="dashboard" class="mt-4"></div>
 
   <script>
-    function toggleCategory(el) {
-      const category = el.parentElement;
-      category.classList.toggle('open');
+    function renderDashboard(config) {
+      const container = document.getElementById('dashboard');
+      container.innerHTML = '';
+      (config.services || []).forEach(service => {
+        const box = document.createElement('div');
+        box.className = 'link-box';
+        box.innerHTML = `<h3>${service.name}</h3><a href="\${service.url}" target="_blank">\${service.url}</a>`;
+        container.appendChild(box);
+      });
     }
 
-    function addLinkPrompt() {
-      alert('Link adding feature to be implemented (XML backed)');
+    let yamlStr = localStorage.getItem('homer_config');
+    if (yamlStr) {
+      try {
+        const config = jsyaml.load(yamlStr);
+        renderDashboard(config);
+      } catch (e) {
+        alert("Failed to parse YAML config.");
+      }
+    } else {
+      document.getElementById('dashboard').innerHTML = '<p>No custom config found. Click "Edit Dashboard" to start.</p>';
     }
   </script>
 </body>
