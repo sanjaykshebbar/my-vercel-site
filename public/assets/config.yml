@@ -1,84 +1,118 @@
-services:
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
 
-  - name: "Portals"
-    icon: "fas fa-network-wired"
-    layout: columns
-    items:
-      - name: "Email Portal"
-        url: "http://corpitmail.internal.directi.com/edp2user"
-        icon: "fas fa-envelope"
-      - name: "Corp IT Portal"
-        url: "https://zetaworld.sharepoint.com/sites/CorporateIT-ITHelpdesk/SitePages/CorpIT-Email.aspx"
-        icon: "fas fa-paper-plane"  # Quick email-like icon
+- Tools:
+    - EPP_Old:
+        icon: mdi-shield-lock
+        href: https://epp-blr.internal.zeta.in/ 
+        description: Data Leak Protection
+    - EPP_Azure:
+        icon: mdi-shield-lock
+        href: https://i6lob4q.hosted.endpointprotector.com
+        description: Data Leak Protection
+    - EPP_Client:
+        icon: mdi-shield-account
+        href: http://172.16.64.63/client.php/software 
+        description: EPP Software
+    - ManageEngine:
+        icon: mdi-desktop-classic
+        href: https://endpointcentral.manageengine.in/webclient#/uems/home
+        description: Remote Assistance
+    - Kasperskey:
+        icon: mdi-security-network
+        href: https://ksc.kaspersky.com/
+        description: Zeta Kaspersky
+    - Kasperskey:
+        icon: mdi-security-network
+        href: https://account.kaspersky.com/SignIn?ReferringRealm=B2BCloud&locale=en&ReturnUrl=https%3a%2f%2fcloud.kaspersky.com%2f
+        description: Flock and Directi Kaspersky
+    - PFSense:
+        icon: mdi-wifi
+        href: https://172.16.65.149/
+        description: PF-Sense (Wifi Vouchers)
+    
 
-  - name: "License Management"
-    icon: "fas fa-id-badge"
-    layout: columns
-    items:
-      - name: "Adobe Login"
-        url: "https://directi.com/adobe-login"
-        icon: "fas fa-paint-brush"
-      - name: "JetBrains"
-        url: "https://account.jetbrains.com/login"
-        icon: "fas fa-code"
-      - name: "EPP Admin"
-        url: "https://epp-blr.internal.zeta.in/"
-        icon: "fas fa-user-shield"
-      - name: "Directi SSP"
-        url: "https://password.internal.directi.com/"
-        icon: "fas fa-key"
-      - name: "KAV Portal"
-        url: "https://cloud.kaspersky.com/#/companies/all"
-        icon: "fas fa-shield-alt"
-      - name: "ManageEngine"
-        url: "https://endpointcentral.manageengine.in/webclient"
-        icon: "fas fa-cogs"
-      - name: "Zeta KAV Portal"
-        url: "https://ksc.kaspersky.com/"
-        icon: "fas fa-virus-slash"
+- Inventory:
+    - Snipe IT:
+        icon: mdi-desktop-classic
+        href: https://h-zeta.internal.directi.com/
+        description: Zeta Inventory
+    - Snipe IT:
+        icon: mdi-desktop-classic
+        href: https://h-vmobi.internal.directi.com/
+        description: Flock Inventory
+    - Snipe IT:
+        icon: mdi-desktop-classic
+        href: https://h-directi.internal.directi.com/
+        description: Directi Inventory
+    - Snipe IT:
+        icon: mdi-desktop-classic
+        href: https://h-bwdspl.internal.directi.com/
+        description: BWDSPL Inventory
+    - Snipe IT:
+        icon: mdi-desktop-classic
+        href: https://h-radix.internal.directi.com/
+        description: Radix Inventory
 
-  - name: "System Administration"
-    icon: "fas fa-server"
-    layout: columns
-    items:
-      - name: "New EPP Portal (DLP)"
-        url: "https://i6lob4q.hosted.endpointprotector.com"
-        icon: "fas fa-exclamation-triangle"
-      - name: "Azure Admin Portal"
-        url: "https://portal.azure.com/"
-        icon: "fab fa-microsoft"
-      - name: "Gsuite Postal"
-        url: "http://172.16.140.222/zeta/modify/#"
-        icon: "fab fa-google"
-      - name: "Google Admin"
-        url: "https://admin.google.com"
-        icon: "fab fa-google"
 
-  - name: "Asset Inventory"
-    icon: "fas fa-boxes"
-    layout: columns
-    items:
-      - name: "Zeta Snipe IT"
-        url: "https://h-zeta.internal.directi.com/"
-        icon: "fas fa-desktop"
-      - name: "Directi Snipe IT"
-        url: "https://h-directi.internal.directi.com/login"
-        icon: "fas fa-desktop"
-      - name: "VMOBI Snipe IT"
-        url: "https://h-vmobi.internal.directi.com/"
-        icon: "fas fa-desktop"
-      - name: "Radix Snipe IT"
-        url: "https://h-radix.internal.directi.com/"
-        icon: "fas fa-desktop"
-      - name: "BWDSPL Snipe IT"
-        url: "https://h-bwdspl.internal.directi.com/"
-        icon: "fas fa-desktop"
-      - name: "Zeta OCS"
-        url: "https://bcon.supporthub.tech/"
-        icon: "fas fa-network-wired"
-      - name: "VMOBI OCS"
-        url: "https://fcon.supporthub.tech/"
-        icon: "fas fa-network-wired"
-      - name: "Directi OCS"
-        url: "https://dcon.supporthub.tech/"
-        icon: "fas fa-network-wired"
+- Portals:
+    - G-Suite:
+        icon: mdi-google
+        href: http://172.16.140.222/zeta/modify/#
+        description: G-Suite-Zeta_Users
+    - G-Suite:
+        icon: mdi-google
+        href: http://172.16.140.222/zeta/groups/#
+        description: G-Suite-Zeta_Groups
+    - G-suite: 
+        icon: mdi-google
+        href: http://172.16.140.222/
+        description: G-Suite_All
+    - Lucid Chart:
+        Icon: 
+    - Zeta Jarvis:
+        Icon: mdi-machine
+        href: https://zeta.darwinbox.in/
+        description: Zeta - Jarvis 
+    - Corp-IT Portal:
+        icon: mdi-webpack
+        href: https://sites.google.com/zeta.tech/corpitmail/home
+        description: Quick emailing portal
+
+
+
+- Custom Apps:
+    - OneNote:
+        icon: mdi-onenote
+        href: https://zetaworld-my.sharepoint.com/personal/sanjayks_zeta_tech/_layouts/15/Doc.aspx?sourcedoc={97b2faba-6d78-4dbb-9b19-83ae4ace2721}&action=edit&wd=target%28Closed%20Tickets%7Cdf2f1dfc-b556-45c9-b403-f568496a6c2a%2F%29&wdorigin=NavigationUrl
+        description: OneNote
+    - SharePoint:
+        icon: mdi-microsoft-sharepoint
+        href: https://zetaworld.sharepoint.com/sites/CorporateIT-ITHelpdesk
+        description: Corp IT Sharepoint
+    - OneDrive:
+        icon: mdi-microsoft-onedrive
+        href: https://www.microsoft365.com/onedrive/?auth=2&home=1&username=sanjayks%40zeta.tech&login_hint=sanjayks%40zeta.tech
+        description: Corp-IT OneDrive
+
+- Quick Sheets: 
+    - IT Asset Assignment: 
+        icon: mdi-file-excel
+        href: https://docs.google.com/spreadsheets/d/1x2sKUe1flOjBebfyLDLsBlnI5QUM_bOXrmKK-QB5Wd0/edit#gid=0
+        description: NJ Main sheet
+    - Credential Creation templates:
+        icon: mdi-file-excel
+        href: https://docs.google.com/spreadsheets/d/1N-S2cntSuv5yYe10QofnfOqBoRJ4MMRpT382_C9MIPY/edit#gid=0
+        description: NJ creds creation template
+    - Links Docs:
+        icon: mdi-file-word
+        href: https://shorturl.at/5u1WT
+        description: doc with all links
+
+- Quick Links: 
+    - Chat-GPT: 
+        icon: mdi-robot
+        href: https://chatgpt.com/
+        description: Generative AI
+
